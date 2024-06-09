@@ -1,0 +1,35 @@
+.dialog-content {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.conflict-icon {
+    color: #ff9800;
+    font-size: 36px; /* Ensure the icon is large enough and consistent */
+    margin-right: 16px; /* Adjust the margin as needed */
+}
+
+.message {
+    flex-grow: 1; /* Ensure the message takes up the remaining space */
+    font-size: 24px; /* Ensure the font size is consistent */
+}
+
+mat-dialog-title {
+    background-color: #f44336;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    text-align: center;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+}
+
+button {
+    margin: 8px;
+    align-items: center;
+}

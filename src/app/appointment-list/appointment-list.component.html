@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row pb-1">
+    <div class="col-12 text-end">
+      <button (click)="showAllPatients()" class="btn btn-success" style="margin-top: 2%; margin-bottom: 2%; margin-right: 1%;">All</button>
+      <button (click)="showTodayPatients()" class="btn btn-primary" style="margin-top: 2%; margin-bottom: 2%;">Today's</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let item of patients">
+      <div class="card card-margin">
+        <div class="card-header no-border">
+          <h5 class="card-title">{{item.name}}</h5>
+        </div>
+        <div class="card-body pt-0">
+          <div class="widget-49">
+            <div class="widget-49-title-wrapper">
+              <div class="widget-49-date-primary">
+                <span class="widget-49-date-day">{{item.id}}</span>
+              </div>
+              <div class="widget-49-meeting-info">
+                <span class="widget-49-pro-title">{{item.city}}</span>
+                <span class="widget-49-meeting-time">{{item.appointment_date | date:'dd-MM-yyyy'}} {{item.appointment_time}}</span>
+              </div>
+            </div>
+            <div class="widget-49-meeting-action">
+              <a href="/list" *ngIf="item.status !== 'done'" (click)="markAsDone(item.id!)" class="btn btn-sm btn-success">Done</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
